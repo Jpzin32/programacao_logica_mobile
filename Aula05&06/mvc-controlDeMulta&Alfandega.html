@@ -1,0 +1,64 @@
+<!--Aqui vai ter uma imagem pelo CSS-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="mq-estilo.css">
+    <link rel="shortcut icon" href="opsz24.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <title>MVC-Controle de Multa</title>
+</head>
+
+<body>
+    <main>
+        <section id="login">
+            <div id="imagem">
+                <!-- Aqui vai ter uma imagem pelo CSS // 
+                Criar uma pagina com sistema ou controle de Multa//
+                Controle de Alfandega = BRASIL não é Estrangeiro// -->
+            </div>
+            <div id="formulario">
+                <h1>CET - Controle de Multa</h1>
+                <p>Bem-vindo novamente, Digite a velocidade do veiculo e sua PLACA.
+                </p>
+                <p>velocidade do Veiculo:<input type="number" name="txtvel" id="txtvel" placeholder="Velocidade do Veiculo"> Km/h</p> 
+                <p>Placa do veiculo:<input type="text" name="" id="text2" placeholder="Placa"></p> 
+                <input type="button" value="Verificar" onclick="calcular()"> 
+                <div id="resp"> </div>
+
+                <script>
+                    function calcular() {
+                        //Esta linha seleciona o elemento HTML que tem o ID txtvel. É um campo de entrada de texto onde o usuário deve inserir a velocidade do veículo.
+                        var txtvel = window.document.querySelector('input#txtvel')
+                        // É um campo de texto onde o usuário deve inserir a velocidade do veículo
+                        var plc = (text2.value)
+                        var vel = Number(txtvel.value)
+                        // Esta linha extrai o valor numérico inserido pelo usuário no campo de entrada de texto e o converte em um número. Se o usuário inserir algo que não seja um número válido, isso resultará em NaN (Not a Number).
+
+                        var resp = window.document.querySelector('div#resp')
+                        // Esta linha seleciona um elemento HTML que tem o ID resp. Provavelmente, é um elemento de div onde as mensagens de resposta serão exibidas.
+                        
+                        //resumidamente essas var recebem o valor digitado pelo usuario manda pro if e o if retorna com o resultado da multa
+                        
+                        if (vel > 60) {
+                        //O código dentro do bloco if verifica se a velocidade inserida pelo usuário (vel) é maior que 60 Km/h. Se for maior, ele adiciona uma mensagem à div#resp indicando que o usuário foi multado por excesso de velocidade. Caso contrário, adiciona uma mensagem indicando que o usuário está dentro do limite de velocidade.
+
+                            resp.innerHTML += `<p>Está achando que você é o toretto? ${vel}, Km/h sua placa ${plc}</p>`
+                        } else {
+                            resp.innerHTML += `<p>Fica em paz véinho${vel}, sua placa ${plc} Km/h</p>`
+                            //resp.innerHTML += ...: Esta linha adiciona conteúdo HTML à div#resp. O += é usado para adicionar o novo conteúdo ao conteúdo existente, em vez de substituí-lo.
+                        }
+                    //esse if recebe as var e retorna com o resultado da multa
+                    }
+                </script>
+
+        </section>
+    </main>
+
+
+</body>
+
+</html>
